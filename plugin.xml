@@ -1,0 +1,28 @@
+<plugin>
+    <nom>cypto captcha</nom>
+    <auteur>Benjamin Lartigue et Lilian Etchepare</auteur>
+    <licence>GNU/GLP</licence>
+    <version>0.0.2</version>
+    <description>
+        Outil de captcha, avec possibilité d'obtenir des fragments de cryptomonnaies (Monero)
+    </description>
+    <etat>dev</etat>
+    <prefix>cryptocaptcha</prefix>
+    <icon>images/xmr.png</icon>
+    <install>base/creation_base.php</install>
+    <!-- <options>cryptocaptcha_options.php</options> -->
+    <!-- <fonctions>autre_fichier.php</fonctions> -->
+    <pipeline>
+        <nom>insert_head</nom>
+        <inclure>cryptocaptcha_pipelines.php</inclure>
+    </pipeline>
+
+    <pipeline>
+        <nom>declarer_tables_principales</nom>
+        <inclure>cryptocaptcha_pipelines.php</inclure>
+        <action>init_tables_principales</action>
+    </pipeline>
+
+
+    <utilise id='cfg' version='[1.3.6;]' src="https://files.spip.net/spip-zone/cfg.zip" />
+</plugin>
